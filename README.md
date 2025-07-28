@@ -89,7 +89,7 @@ Sales data was obtained from a central transaction database of the company repre
 **Data Loading**: 
 Reading the Raw Dataset which originally existed as a CSV file into a Pandas Dataframe
 
-~~~python
+```python
 # solution
 
 import pandas as pd
@@ -98,16 +98,24 @@ bikes_df = pd.read_csv("/Users/cynthiamatthew/Downloads/bikes.csv")
 
 
 bikes_df.head()
-~~~
+```
 
 ### Data Inspection and Cleaning
 - **1. Check for Missing values**:
 
-~~~python
+```python
 # solution 
 
 bikes_df.isna().any()
-~~~
+```
+
+```python
+# counting the number of missing values 
+
+total_number_of_missing_values_by_column = bikes_df.isna().sum()
+
+total_number_of_missing_values_by_column
+```
 
 
 
