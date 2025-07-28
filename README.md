@@ -102,6 +102,7 @@ bikes_df.head()
 
 
 ### Data Inspection and Cleaning
+
 - **1. Check for Missing values**:
 
 ```python
@@ -119,6 +120,8 @@ total_number_of_missing_values_by_column = bikes_df.isna().sum()
 
 total_number_of_missing_values_by_column
 ```
+
+
 
 
 
