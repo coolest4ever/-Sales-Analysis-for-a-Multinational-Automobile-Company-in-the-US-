@@ -121,6 +121,95 @@ total_number_of_missing_values_by_column = bikes_df.isna().sum()
 total_number_of_missing_values_by_column
 ```
 
+```python
+# visualizing the total number of misssing values
+
+import matplotlib.pyplot as plt
+
+# using the bar plot to visualize the missing values
+
+
+total_number_of_missing_values_by_column.plot(kind = "bar")
+
+# to show the plot 
+# call the plt.show()
+
+plt.show()
+```
+
+- **2.Handling Missing values**:
+
+```python
+# solution
+
+bikes_df["ProductColor"].mode()
+
+bikes_df = bikes_df.fillna("Black")
+
+bikes_df
+```
+```python
+# to verify that there are no more missing values on our dataset
+
+bikes_df.isna().any()
+```
+
+- **3. Check for  Duplicates**:
+
+```python
+# solution
+
+# counting the total number of our datapoint 
+
+len(bikes_df)
+```
+```python
+# dropping any duplicates if any exists 
+
+bikes_df.drop_duplicates(inplace = True)
+```
+
+- **4. Handling Duplicates**:
+```python
+# solution
+
+# re-counting our data point again 
+
+len(bikes_df)
+# This shows that there was NO duplicates on our dataset
+```
+
+### Data Modification
+# generating some core metrics which were NOT provided from the dataset, which would be required for the purpose of the data analysis
+
+# solution 
+
+# (1) TotalCostPrice : To be obtained by (OrderQuantity x CostPrice_usd)
+
+
+bikes_df["TotalCostPrice"] = bikes_df["OrderQuantity"] * bikes_df["CostPrice_usd"] 
+
+
+# (2) SalesRevenue : To be obtained by (OrderQuantity x SellingPrice_usd)
+
+
+bikes_df["SalesRevenue"] = bikes_df["OrderQuantity"] * bikes_df["SellingPrice_usd"] 
+
+
+# (3) Profit : To be obtained by (SalesRevenue - TotalCostPrice)
+
+
+bikes_df["Profit"] = bikes_df["SalesRevenue"]  - bikes_df["TotalCostPrice"]
+
+
+# Displaying the result
+
+bikes_df.head()
+
+  
+  
+
+
 
 
 
